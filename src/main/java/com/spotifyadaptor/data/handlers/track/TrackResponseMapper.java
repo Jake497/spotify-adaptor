@@ -1,5 +1,6 @@
 package com.spotifyadaptor.data.handlers.track;
 
+import com.spotifyadaptor.data.items.Artist;
 import com.spotifyadaptor.data.items.Track;
 import com.spotifyadaptor.data.handlers.ResponseMapper;
 import com.spotifyadaptor.data.items.mappers.RefinedTrackMapper;
@@ -24,6 +25,10 @@ public class TrackResponseMapper implements ResponseMapper<CurrentTrackResponse,
                         .orElse(Track
                                 .builder()
                                 .name("No song playing currently")
+                                .artist(Artist
+                                        .builder()
+                                        .name("")
+                                        .build())
                                 .build());
     }
 }
